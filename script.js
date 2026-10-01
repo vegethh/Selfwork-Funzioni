@@ -1,16 +1,19 @@
-function fizzBuzz(N) {
-    for (let i = 1; i <= N; i++) {
-        if (i % 15 === 0) {
-            console.log("fizzBuzz");
-        } else if (i % 3 === 0) {
-            console.log("Fizz");
-        } else if (i % 5 === 0) {
-            console.log("Buzz");
-        } else {
-            console.log(i);
-        }
+function contaCifre(numero) {
+    if (numero > 9999) {
+        console.log("Numero troppo grande");
+    } else if (numero >= 1000) {
+        console.log("4 cifre");
+    } else if (numero >= 100) {
+        console.log("3 cifre");
+    } else if (numero >= 10) {
+        console.log("2 cifre");
+    } else {
+        console.log("1 cifra");
     }
 }
 
-// Esempio di chiamata della funzione
-fizzBuzz(30);
+// Esempi di chiamata
+contaCifre(9);
+contaCifre(99);
+contaCifre(12000);
+contaCifre(345);
