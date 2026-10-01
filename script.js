@@ -1,19 +1,22 @@
-function contaCifre(numero) {
-    if (numero > 9999) {
-        console.log("Numero troppo grande");
-    } else if (numero >= 1000) {
-        console.log("4 cifre");
-    } else if (numero >= 100) {
-        console.log("3 cifre");
-    } else if (numero >= 10) {
-        console.log("2 cifre");
+function isPalindroma(str) {
+    // 1. Tolgo spazi e punteggiatura e metto tutto in minuscolo
+    let pulita = str.replace(/\W/g, "").toLowerCase();
+
+    // 2. Creo la stringa al contrario
+    let invertita = "";
+    for (let i = pulita.length - 1; i >= 0; i--) {
+        invertita = invertita + pulita[i];
+    }
+
+    // 3. Confronto e restituisco true o false
+    if (pulita === invertita) {
+        return true;
     } else {
-        console.log("1 cifra");
+        return false;
     }
 }
 
-// Esempi di chiamata
-contaCifre(9);
-contaCifre(99);
-contaCifre(12000);
-contaCifre(345);
+// Esempi di prova
+console.log(isPalindroma("i topi non avevano nipoti"));  // true
+console.log(isPalindroma("ciao"));                       // false
+console.log(isPalindroma("Anna"));                       // true
